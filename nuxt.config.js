@@ -1,9 +1,11 @@
 import colors from 'vuetify/es5/util/colors'
-
+const main_base_URL = 'https://www.giftedsoftware.com';
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  sitemap: {
+    hostname: main_base_URL
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - gifted-software-nuxt',
@@ -22,9 +24,12 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
-
+  loading: {
+    color: 'blue',
+    height: '5px'
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/vuelidate', '~/plugins/gtag'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -33,10 +38,11 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/sitemap'],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
