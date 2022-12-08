@@ -26,7 +26,7 @@
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.3",
     "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.1",
     "vue-gtag": "^1.0.1"
   }
 }
